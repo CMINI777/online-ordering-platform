@@ -1,33 +1,33 @@
 <h1 align="center">Online-Ordering-Platform</h1>
 
-## 在线订货平台 ##
+## Design it with the concept of micro-service. ##
 
 ---
 
-一、项目功能
+1. System Function Structure
 
 ```
-                      |--用户登录
-                      |--用户退出
-            |--客户端--
-            |         |--商品订购
-            |         |--我的订单
-在线订货平台--
-            |
-            |              |--管理员登录
-            |              |--管理员退出
-            |              |--添加用户
-            |              |--查询用户
-            |              |--删除用户
-            |--后台管理系统--
-                           |--添加商品
-                           |--查询商品
-                           |--修改商品
-                           |--删除商品
-                           |--订单处理
+                                  |--User Login
+                                  |--User Exit
+                        |--Client--
+                        |         |--Goods Order
+                        |         |--My Order
+Online Ordering Platform--
+                        |
+                        |                               |--Admin Login
+                        |                               |--Admin Exit
+                        |                               |--Add User
+                        |                               |--Query User
+                        |                               |--Delete User
+                        |--Background Management System--
+                                                        |--Add Goods
+                                                        |--Query Goods
+                                                        |--Modify The Goods
+                                                        |--Delete Goods
+                                                        |--Order Processing
 ```
 
-二、系统架构 <br>
+2. Concept System of Structure <br>
 
 ![1](https://github.com/CMINI777/online-ordering-platform/blob/master/model.png)
 
