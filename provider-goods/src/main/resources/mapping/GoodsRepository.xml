@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.minichn.repository.GoodsRepository">
+
+    <select id="findAll" resultType="Goods">
+        select * from t_goods limit #{param1},#{param2}
+    </select>
+
+    <select id="count" resultType="int">
+        select count(id) from t_goods
+    </select>
+
+    <select id="findById" parameterType="long" resultType="Goods">
+        select * from t_goods where id = #{id}
+    </select>
+
+    <insert id="save" parameterType="Goods">
+        insert into t_goods(name,price,details) values(#{name},#{price},#{details})
+    </insert>
+
+    <update id="update" parameterType="Goods">
+        update t_goods set name = #{name},price = #{price},details = #{details} where id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="long">
+        delete from t_goods where id = #{id}
+    </delete>
+</mapper>
