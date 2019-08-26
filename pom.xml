@@ -15,6 +15,7 @@
         <module>provider-user</module>
         <module>registry-center</module>
         <module>native-config-server</module>
+        <module>consumer-client-feign</module>
     </modules>
 
     <parent>

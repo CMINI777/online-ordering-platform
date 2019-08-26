@@ -1,6 +1,7 @@
 package com.minichn.controller;
 
 import com.minichn.entity.Goods;
+import com.minichn.entity.GoodsVO;
 import com.minichn.repository.GoodsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,8 +29,13 @@ public class GoodsHandler {
         return this.port;
     }
 
-    @GetMapping("/findAll/{index}/{limit}")
-    public List<Goods> findAll(@PathVariable("index") int index, @PathVariable("limit") int limit){
-        return goodsRepository.findAll(index, limit);
+    @GetMapping("/findAll/{page}/{limit}")
+    public GoodsVO findAll(@PathVariable("page") int page, @PathVariable("limit") int limit){
+        GoodsVO goodsVO = new GoodsVO();
+        goodsVO.setCode(0);
+        goodsVO.setMsg("");
+        goodsVO.setCount(goodsRepository.count());
+        goodsVO.setData(goodsRepository.findAll((page-1)*limit,limit));
+        return goodsVO;
     }
 }

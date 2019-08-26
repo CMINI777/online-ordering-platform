@@ -2,8 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.minichn.repository.GoodsRepository">
 
-    <select id="findAll" resultType="Goods">
-        select * from t_goods limit #{param1},#{param2}
+    <resultMap id="goodsMap" type="Goods">
+        <id property="id" column="gid"/>
+        <result property="name" column="gname"/>
+        <result property="price" column="price"/>
+        <result property="details" column="details"/>
+        <!-- 映射type -->
+        <association property="type" javaType="Type">
+            <id property="id" column="tid"/>
+            <result property="name" column="tname"/>
+        </association>
+    </resultMap>
+
+    <select id="findAll" resultMap="goodsMap">
+        select g.id gid,g.name gname,g.price,g.details,t.id tid,t.name tname from t_goods g,t_type t where g.tid = t.id order by gid limit #{param1},#{param2}
     </select>
 
     <select id="count" resultType="int">
