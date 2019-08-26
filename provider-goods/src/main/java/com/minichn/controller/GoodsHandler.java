@@ -2,13 +2,11 @@ package com.minichn.controller;
 
 import com.minichn.entity.Goods;
 import com.minichn.entity.GoodsVO;
+import com.minichn.entity.Type;
 import com.minichn.repository.GoodsRepository;
+import com.minichn.repository.TypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,16 +16,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/goods")
 public class GoodsHandler {
-    @Value("${server.port}")
-    private String port;
 
     @Autowired
     private GoodsRepository goodsRepository;
-
-    @GetMapping("/index")
-    public String index(){
-        return this.port;
-    }
+    @Autowired
+    private TypeRepository typeRepository;
 
     @GetMapping("/findAll/{page}/{limit}")
     public GoodsVO findAll(@PathVariable("page") int page, @PathVariable("limit") int limit){
@@ -38,4 +31,30 @@ public class GoodsHandler {
         goodsVO.setData(goodsRepository.findAll((page-1)*limit,limit));
         return goodsVO;
     }
+
+    @GetMapping("/findAllType")
+    public List<Type> findAllType(){
+        return typeRepository.findAll();
+    }
+
+    @PostMapping("/save")
+    public void save(@RequestBody Goods goods){
+        goodsRepository.save(goods);
+    }
+
+    @GetMapping("/findById/{id}")
+    public Goods findById(@PathVariable("id") long id){
+        return goodsRepository.findById(id);
+    }
+
+    @PutMapping("/update")
+    public void update(@RequestBody Goods goods){
+        goodsRepository.update(goods);
+    }
+
+    @DeleteMapping("/deleteById/{id}")
+    public void deleteById(@PathVariable("id") long id){
+        goodsRepository.deleteById(id);
+    }
+
 }
