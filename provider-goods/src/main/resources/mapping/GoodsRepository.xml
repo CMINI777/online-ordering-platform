@@ -22,16 +22,16 @@
         select count(id) from t_goods
     </select>
 
-    <select id="findById" parameterType="long" resultType="Goods">
-        select * from t_goods where id = #{id}
+    <select id="findById" resultMap="goodsMap" >
+        select id gid,name gname,price,details,tid from t_goods where id = #{id}
     </select>
 
     <insert id="save" parameterType="Goods">
-        insert into t_goods(name,price,details) values(#{name},#{price},#{details})
+        insert into t_goods(name,price,details,tid) values(#{name},#{price},#{details},#{type.id})
     </insert>
 
     <update id="update" parameterType="Goods">
-        update t_goods set name = #{name},price = #{price},details = #{details} where id = #{id}
+        update t_goods set name = #{name},price = #{price},details = #{details},tid = #{type.id} where id = #{id}
     </update>
 
     <delete id="deleteById" parameterType="long">
