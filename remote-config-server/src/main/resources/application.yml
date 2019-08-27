@@ -11,7 +11,7 @@ spring:
       server:
         git:
           uri: git@github.com:***/***.git #git仓库地址
-          searchPaths: RemoteRepositoryConfig #仓库路径
+          searchPaths: remoteRepositoryConfig #仓库路径
       label: master #仓库的分支
 eureka:
   client:
