@@ -1,9 +1,20 @@
+# =========== native config server Begin ===========
+#spring:
+#  application:
+#    name: account
+#  profiles:
+#    active: dev
+#  cloud:
+#    config:
+#      uri: http://localhost:8762
+#      fail-fast: true
+# =========== native config server End ===========
+
 spring:
-  application:
-    name: account
-  profiles:
-    active: dev
   cloud:
     config:
-      uri: http://localhost:8762
-      fail-fast: true
+      name: account #对应的配置文件名称
+      label: master #git仓库分支名
+      discovery:
+        enabled: true
+        serviceId: remoteconfigserver #连接的配置中心名称
