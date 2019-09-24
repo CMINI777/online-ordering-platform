@@ -32,3 +32,10 @@ Online Ordering Platform--
 ![1](https://github.com/CMINI777/online-ordering-platform/blob/master/model.png)
 
 -----
+
+About login
+
+| Username | Password |
+| :---: | :---: |
+| admin1 | 123456 |
+| zhangsan | 123456 |

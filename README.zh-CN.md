@@ -32,3 +32,10 @@
 ![1](https://github.com/CMINI777/online-ordering-platform/blob/master/model.zh-CN.png)
 
 -----
+
+关于登录
+
+| 用户名 | 密码 |
+| :---: | :---: |
+| admin1 | 123456 |
+| zhangsan | 123456 |

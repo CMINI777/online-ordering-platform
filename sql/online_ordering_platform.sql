@@ -27,8 +27,7 @@ CREATE TABLE `t_admin` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of t_admin  ----------------------------username==admin1 // password==123456
--- CCBABE9289F0E877F224E85B39010B41 == 123456 == CCBABE9289F0E877F224E85B39010B41 == 123456
+-- Records of t_admin
 -- ----------------------------
 INSERT INTO `t_admin` VALUES ('1', 'admin1', 'CCBABE9289F0E877F224E85B39010B41');
 
@@ -140,7 +139,6 @@ CREATE TABLE `t_user` (
 
 -- ----------------------------
 -- Records of t_user
--- CCBABE9289F0E877F224E85B39010B41 == 123456 == CCBABE9289F0E877F224E85B39010B41 == 123456 == password
 -- ----------------------------
 INSERT INTO `t_user` VALUES ('1', 'zhangsan', 'CCBABE9289F0E877F224E85B39010B41', '张三', '男', '13576765678', '2019-02-03', '科技路');
 INSERT INTO `t_user` VALUES ('2', 'lisi', 'CCBABE9289F0E877F224E85B39010B41', '李四', '女', '18678987676', '2019-02-03', '科技路');
