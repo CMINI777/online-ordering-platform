@@ -35,7 +35,7 @@ Online Ordering Platform--
 
 About login
 
-| Username | Password |
-| :---: | :---: |
-| admin1 | 123456 |
-| zhangsan | 123456 |
+| Username | Password | Role |
+| :---: | :---: | :---: |
+| admin1 | 123456 | Admin |
+| zhangsan | 123456 | User |
