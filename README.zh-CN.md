@@ -2,6 +2,8 @@
 
 <div align="center">
 
+Spring Cloud Demo （以微服务理念设计）
+
 [![GitHub issues](https://img.shields.io/github/issues/CMINI777/online-ordering-platform)](https://github.com/CMINI777/online-ordering-platform/issues) [![GitHub forks](https://img.shields.io/github/forks/CMINI777/online-ordering-platform)](https://github.com/CMINI777/online-ordering-platform/network) [![GitHub stars](https://img.shields.io/github/stars/CMINI777/online-ordering-platform)](https://github.com/CMINI777/online-ordering-platform/stargazers) [![GitHub license](https://img.shields.io/github/license/CMINI777/online-ordering-platform)](https://github.com/CMINI777/online-ordering-platform/blob/master/LICENSE)
 
 </div>
